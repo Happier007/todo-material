@@ -1,0 +1,10 @@
+<form [formGroup]="authForm" class="example-form" (submit)="submitForm(authForm.value)">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Username" formControlName="username">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary" [disabled]="!authForm.valid">Sign in</button>
+</form>
+

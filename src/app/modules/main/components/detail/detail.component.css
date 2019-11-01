@@ -1,0 +1,10 @@
+.content {
+  display: flex;
+  margin-bottom: auto;
+  flex-wrap: wrap;
+}
+
+.todo-list {
+  width: 50%;
+  margin: auto;
+}

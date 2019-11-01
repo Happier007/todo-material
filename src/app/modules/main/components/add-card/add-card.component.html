@@ -1,0 +1,16 @@
+<form (ngSubmit)="submitForm(addForm.value)" [formGroup]="addForm" class="add-form">
+  <mat-form-field>
+    <input matInput placeholder="name" formControlName="title">
+    <mat-error *ngIf="addForm.hasError('email') && !addForm.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="addForm.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-dialog-actions>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!addForm.valid">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-dialog-actions>
+</form>

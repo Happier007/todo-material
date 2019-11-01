@@ -1,0 +1,15 @@
+<main class="content">
+  <section class="todo-list" *ngIf="(task$ | async) as task">
+    <mat-list>
+      <h2>{{ task.title }}</h2>
+      <mat-list-item>
+        <p mat-line>status: {{ task.status }}</p>
+        <p mat-line>due date: {{ task.due_date }}</p>
+        <p mat-line>description: {{ task.description }}</p>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <a matLine routerLink="/todo">Back</a>
+    </mat-list>
+  </section>
+</main>

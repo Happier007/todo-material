@@ -1,0 +1,21 @@
+<main class="content">
+  <section class="todo-list">
+    <app-add-card (clickEdit)="editTaskEvent($event)"></app-add-card>
+    <mat-list *ngFor="let task of tasks$ | async">
+      <a matLine routerLink="/detail/{{task.id}}">{{task.title}}</a>
+      <mat-list-item>
+        <p mat-line>status: {{status(task.status)}}</p>
+        <p mat-line>dut date: {{task.due_date}}</p>
+        <button mat-raised-button (click)="openDialog(task.id)">
+          <mat-icon>create</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(task.id)">
+          <mat-icon>delete_forever</mat-icon>
+        </button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </section>
+</main>
+
